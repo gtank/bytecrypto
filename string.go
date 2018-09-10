@@ -101,9 +101,9 @@ func (s *String) readLengthPrefixed(lenLen int, outChild *String) bool {
 		return false
 	}
 	var length uint32
-	for _, b := range lenBytes {
+	for i := lenLen - 1; i >= 0; i-- {
 		length <<= 8
-		length = length | uint32(b)
+		length |= uint32(lenBytes[i])
 	}
 	if int(length) < 0 {
 		// This currently cannot overflow because we read uint24 at most, but check

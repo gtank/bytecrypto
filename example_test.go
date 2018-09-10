@@ -17,7 +17,7 @@ func ExampleString_lengthPrefixed() {
 	// example, TLS). Imagine a 16-bit prefixed series of 8-bit prefixed
 	// strings.
 
-	input := bytecrypto.String([]byte{0, 12, 5, 'h', 'e', 'l', 'l', 'o', 5, 'w', 'o', 'r', 'l', 'd'})
+	input := bytecrypto.String([]byte{12, 0, 5, 'h', 'e', 'l', 'l', 'o', 5, 'w', 'o', 'r', 'l', 'd'})
 	var result []string
 
 	var values bytecrypto.String
